@@ -3,7 +3,7 @@ const { User } = require("../../models");
 
 router.use("/", (req, res) => {
   User.findAll({}).then((userData) => {
-  res
+    res.json(userData);
   });
 });
 

@@ -1,0 +1,13 @@
+<article class="container">
+    {{#each posts}}
+    <section>
+        <div>
+            {{title}}
+            <span>posted by {{user.username}} on {{createdAt}}</span>
+        </div>
+        <div>
+            {{content}}
+        </div>
+    </section>
+    {{/each}}
+</article>

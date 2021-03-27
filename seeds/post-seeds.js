@@ -2,13 +2,13 @@ const { Post } = require("../models");
 
 const postdata = [
   {
-    title: "Donec posuere metus vitae ipsum.",
-    content: "helosdas sadsad sad",
+    title: "this is my first post",
+    content: "I am glad that I am here",
     user_id: 1,
   },
   {
-    title: "Morbi non quam nec dui luctus rutrum.",
-    content: "this is asadasdasdasd",
+    title: "this is my second post",
+    content: "hello everyone",
     user_id: 2,
   },
 ];
