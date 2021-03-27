@@ -6,7 +6,11 @@
             <span>posted by {{user.username}} on {{createdAt}}</span>
         </div>
         <div>
-            {{content}}
+            <p>{{content}}</p>
+            <div class="d-flex">
+                <i class="bi bi-heart-fill"></i>
+                <i class="bi bi-chat-left"></i>
+            </div>
         </div>
     </section>
     {{/each}}
