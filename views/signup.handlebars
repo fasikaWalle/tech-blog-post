@@ -1,21 +1,22 @@
 <section class="border p-4 d-flex justify-content-center mb-4">
-    <form>
+    <form class="signup-form">
         <!-- Email input -->
         <div class="form-outline mb-4">
-            <input type="text" id="username" class="form-control" />
+            <input type="text" id="username" name="username" class="form-control" />
             <label class="form-label" for="username">User name</label>
         </div>
 
         <div class="form-outline mb-4">
-            <input type="email" id="form1Example1" class="form-control" />
-            <label class="form-label" for="form1Example1">Email address</label>
+            <input type="email" id="email" name="email" class="form-control" />
+            <label class="form-label" for="email">Email address</label>
         </div>
 
         <!-- Password input -->
         <div class="form-outline mb-4">
-            <input type="password" id="form1Example2" class="form-control" />
-            <label class="form-label" for="form1Example2">Password</label>
+            <input type="password" id="password" name="password" class="form-control" />
+            <label class="form-label" for="password">Password</label>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Sign up</button>
     </form>
 </section>
+<script src="/javascript/signup.js"></script>
