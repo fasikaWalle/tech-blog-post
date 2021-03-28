@@ -1,10 +1,10 @@
 async function signinHandler(event) {
   event.preventDefault();
-  const email = document.querySelector('input[name="email"]');
-  const password = document.querySelector('input[name="password"]');
-
+  const email = document.querySelector('input[name="email"]').value;
+  const password = document.querySelector('input[name="password"]').value;
+  console.log(email, password);
   if (email && password) {
-    const response = fetch("/api/users", {
+    const response = await fetch("/api/users/signin", {
       method: "POST",
       body: JSON.stringify({
         email,

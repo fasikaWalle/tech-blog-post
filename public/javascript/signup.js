@@ -17,11 +17,13 @@ async function signupFormHandler(event) {
       },
     });
     if (response.ok) {
-      alert("success");
+      window.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
   }
 }
 
-document.querySelector(".signup-form").addEventListener("submit", signupFormHandler);
+document
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupFormHandler);
