@@ -40,6 +40,7 @@ User.belongsToMany(Post, {
 Post.belongsToMany(User, {
   through: Like,
   foreignKey: "user_id",
+  onDelete:"cascade"
 });
 
 Like.belongsTo(User, {

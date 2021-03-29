@@ -1,11 +1,17 @@
 const router = require("express").Router();
-const { Post, User } = require("../models");
+const { Post, User, Comment } = require("../models");
+const authentication = require('../utils/authentication')
+
 router.get("/", (req, res) => {
   Post.findAll({
     include: [
       {
         model: User,
         attributes: ["username"],
+      },
+      {
+        model: Comment,
+        attributes: ["comment_text", "user_id", "post_id"],
       },
     ],
   }).then((userData) => {
@@ -15,7 +21,7 @@ router.get("/", (req, res) => {
     }
     const posts = userData.map((post) => post.get({ plain: true }));
     console.log(posts);
-    res.render("home", { posts });
+    res.render("home", { posts ,loggedIn:req.session.loggedIn});
   });
 });
 router.get("/signin", (req, res) => {
@@ -25,6 +31,7 @@ router.get("/signin", (req, res) => {
 router.get("/signup", (req, res) => {
   res.render("signup");
 });
+
 
 
 module.exports = router;

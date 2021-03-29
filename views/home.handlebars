@@ -1,4 +1,4 @@
-<article class="container">
+<article class="container mt-5 article-posts">
     {{#each posts}}
     <section>
         <div>
@@ -7,11 +7,17 @@
         </div>
         <div>
             <p>{{content}}</p>
+            <a href="#" class="d-flex justify-content-center">{{comments.length}} comments</a>
             <div class="d-flex">
-                <i class="bi bi-heart-fill"></i>
-                <i class="bi bi-chat-left"></i>
+                {{likes}}
+                <button class="like">
+                    <i class="bi bi-heart-fill mr-4" data-post-id={{id}}>Like</i>
+                </button>
+                <button class="comment"><i class="bi bi-chat-left"><span class="ml-2">Comment</span></i></button>
             </div>
         </div>
     </section>
     {{/each}}
 </article>
+
+<script src="/javascript/like.js"></script>

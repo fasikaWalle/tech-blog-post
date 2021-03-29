@@ -1,7 +1,9 @@
 async function signinHandler(event) {
   event.preventDefault();
-  const email = document.querySelector('input[name="email"]').value;
-  const password = document.querySelector('input[name="password"]').value;
+  const email = document.querySelector('input[name="email"]').value.trim();
+  const password = document
+    .querySelector('input[name="password"]')
+    .value.trim();
   console.log(email, password);
   if (email && password) {
     const response = await fetch("/api/users/signin", {
@@ -15,9 +17,10 @@ async function signinHandler(event) {
       },
     });
     if (response.ok) {
-      window.location.replace("/dashboard");
+      console.log("sucess");
+      document.location.replace('/dashboard/');
     } else {
-      alert(response.statusText);
+      console.log(response.statusText);
     }
   }
 }
@@ -25,3 +28,5 @@ async function signinHandler(event) {
 document
   .querySelector(".signin-form")
   .addEventListener("submit", signinHandler);
+
+ 

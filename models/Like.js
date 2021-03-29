@@ -12,7 +12,6 @@ Like.init(
     },
     post_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
         model: "post",
         key: "id",
@@ -20,7 +19,6 @@ Like.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
         model: "user",
         key: "id",
@@ -29,6 +27,7 @@ Like.init(
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "like",

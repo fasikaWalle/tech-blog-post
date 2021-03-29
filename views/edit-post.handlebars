@@ -1,0 +1,20 @@
+<section class="border p-4 d-flex justify-content-center mb-4">
+    {{#if loggedIn}}
+    <form class="update-post">
+        <div class="form-outline mb-4">
+            <input type="text" class="form-control" name="title" value={{posts.title}} />
+            <label class="form-label" for="title">Title</label>
+        </div>
+        <div class="form-outline mb-4">
+            <input class="form-control" id="content" rows="5" name="content" value={{posts.content}}></input>
+            <label class="form-label" for="content">Content</label>
+        </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-4">Update</button>
+        <button type="button" class="btn btn-primary btn-block mb-4" id="delete">Delete</button>
+    </form>
+    {{/if}}
+</section>
+
+<script src="/javascript/updatePost.js"></script>
+<script src="/javascript/delete.js"></script>
