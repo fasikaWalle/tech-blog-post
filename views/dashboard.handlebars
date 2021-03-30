@@ -4,14 +4,14 @@
 </section>{{#if posts.length}}
 <section class="container">
     <h2>Your posts</h2>
-    <ol>
+    <ul class="list-style-none">
         {{#each posts as |post|}}
         <li>
             {{>post-info post}}
             <a href="/dashboard/edit/{{post.id}}" class="">Edit</a>
         </li>
         {{/each}}
-    </ol>
+    </ul>
 </section>
 {{/if}}
 

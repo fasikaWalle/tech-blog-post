@@ -7,13 +7,11 @@
         </div>
         <div>
             <p>{{content}}</p>
-            <a href="#" class="d-flex justify-content-center">{{comments.length}} comments</a>
+            <a href="/posts/{{id}}" class="d-flex justify-content-center">{{comments.length}} comments</a>
             <div class="d-flex">
                 {{likes}}
-                <button class="like">
-                    <i class="bi bi-heart-fill mr-4" data-post-id={{id}}>Like</i>
-                </button>
-                <button class="comment"><i class="bi bi-chat-left"><span class="ml-2">Comment</span></i></button>
+                <i class="bi bi-heart-fill mr-4 like" data-post-id={{id}}>Like</i>
+                <i class="bi bi-chat-left comment"><span class="ml-2" data-post-id={{id}}>Comment</i>
             </div>
         </div>
     </section>
@@ -21,3 +19,4 @@
 </article>
 
 <script src="/javascript/like.js"></script>
+<script src="/javascript/comment.js"></script>

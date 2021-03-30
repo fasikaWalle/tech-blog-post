@@ -1,9 +1,16 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
 const authentication = require('../utils/authentication')
-
+const sequelize=require("../config/connection")
 router.get("/", (req, res) => {
   Post.findAll({
+    attributes:[
+      "id","title","content","created_at",
+      [sequelize.literal(`(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)`),'likes']
+    ]
+      
+      
+    ,
     include: [
       {
         model: User,
