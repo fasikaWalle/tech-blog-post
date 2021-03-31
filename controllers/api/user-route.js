@@ -70,7 +70,7 @@ router.post("/", authentication, (req, res) => {
 router.get("/", authentication, (req, res) => {
   User.findAll({}).then((userData) => {
     res.json(userData);
-  });
+  })
 });
 
 router.post("/logout", (req, res) => {

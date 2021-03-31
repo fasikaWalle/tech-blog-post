@@ -133,6 +133,9 @@ router.delete("/:id", authentication, (req, res) => {
 router.get("/", (req, res) => {
   Post.findAll({}).then((dbUser) => {
     res.json(dbUser);
+  }).catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
   });
 });
 
