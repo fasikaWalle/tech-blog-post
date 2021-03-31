@@ -29,6 +29,7 @@ This tech-blog application is designed for connecting peoples and enable them to
 This Licence belongs to Apache
 
 ## Features
+- Mobile responsive
 - A user are not able to edit a post if it is not belongs to him/her.
 - A user is not allowed to like one post more than once.
 
