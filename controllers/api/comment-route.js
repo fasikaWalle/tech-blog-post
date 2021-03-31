@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Comment } = require("../../models");
-const authentication = require("../../utils/authentication");
+const authentication = require("../../__test__/utils/authentication");
 
 router.get("/", (req, res) => {
   Comment.findAll({})
@@ -26,7 +26,7 @@ router.post("/", authentication, (req, res) => {
 });
 
 //Delete a comment
-router.delete("/:id", (req, res) => {
+router.delete("/:id", authentication, (req, res) => {
   Comment.destroy({
     where: {
       id: req.params.id,

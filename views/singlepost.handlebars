@@ -1,0 +1,32 @@
+<article class="container mt-4">
+    {{> post-info posts}}
+    {{>comment posts.comments}}
+    {{#if loggedIn}}
+    <section class="">
+        <form class="comment-form">
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form4Example3">Comments</label>
+                <textarea class="form-control" id="comment" name="comment_text" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mb-4" data-post-id={{id}}>Submit</button>
+        </form>
+    </section>
+    {{/if}}
+    <!-- Message input -->
+</article>
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{!--
+<script src="/javascript/sessionout.js"></script> --}}
+{{/if}}
+
+
+{{!-- <form class="comment-form">
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form4Example3">Comments</label>
+        <textarea class="form-control" id="comment" name="comment_text" rows="4"></textarea>
+
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mb-4" data-post-id={{id}}>Submit</button>
+</form> --}}

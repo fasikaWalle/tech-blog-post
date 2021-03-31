@@ -1,6 +1,55 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+  }
+   
+  body, html {
+    font-size: 20px;
+    font-family:  Helvetica, sans-serif;
+    color:#333;
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: 90%;
+    color: #4facfe;
+    margin:1.5rem 0.2rem;
+    font-weight: bold;
+    transition: color .3s ease-in-out;
+  }
+  .navbar{
+    padding: 0.1rem 0;  
+    font-size: 120%;
+   background-color: #0c2438;
+   color:#fff;
+   display: flex;
+  
+   
+  }
+  .navbar .home{
+    font-size: 2rem;
+  }
 
-
-
-.create-post{
-    margin-top:10%;
+.blog-post span{
+    color:rgb(122, 121, 121);
+    font-size: 70%;
 }
+.navbar .nav-link{
+  color:#fff;
+}
+  .card-header{
+      padding:0;
+  }
+  .navbar .signin{
+    justify-self: end;
+  }
+.container ol{
+    list-style: none;
+}
+  
+.card-body{
+  padding:0.2rem 1.2rem;
+}
+  
+  

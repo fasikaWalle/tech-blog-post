@@ -1,11 +1,15 @@
-<article class="post">
-    <div class="title">
-        <h5>{{title}}</h5>
-        <p>{{content}}</p>
+<div class="card blog-post">
+    <div class="card-header d-flex justify-content-between align-items-center pl-2 pr-2">
+        <a href="/post/{{id}}">{{title}}</a>
+        <span>posted by {{user.username}} on {{format_date created_at}}</span>
     </div>
-    <div class="meta">
-        {{likes}} by {{user.username}} on {{created_at}}
-        |
-        <a href="/posts/{{id}}">{{comments.length}}comments</a>
+    <div class="card-body">
+        <p class="card-title">{{content}}</p>
+        {{likes}}
+        <i class="bi bi-hand-thumbs-up-fill mr-4 like" data-post-id={{id}}></i>
+
+        <a href="/post/{{id}}" class="card-text"> {{comments.length}} {{format_plural "comment"
+            comments.length}}</a>
+
     </div>
-</article>
+</div>

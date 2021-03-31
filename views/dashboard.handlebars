@@ -1,18 +1,17 @@
 <div class="d-flex justify-content-center create-post">
     <a href="/create" class="btn btn-primary btn-lg">Create Post</a>
 </div>
-</section>{{#if posts.length}}
-<section class="container">
-    <h2>Your posts</h2>
-    <ul class="list-style-none">
-        {{#each posts as |post|}}
-        <li>
-            {{>post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="">Edit</a>
-        </li>
-        {{/each}}
-    </ul>
-</section>
-{{/if}}
 
+<h2>Your posts</h2>
+{{#if posts.length}}
+<div class="card container">
+    {{#each posts as |post|}}
+    {{>post-info post}}
+    <div class="card-body">
+        <a href="/dashboard/edit/{{post.id}}" class="">Edit</a>
+
+    </div>
+    {{/each}}
+</div>
+{{/if}}
 <script src="/javascript/createpost.js"></script>

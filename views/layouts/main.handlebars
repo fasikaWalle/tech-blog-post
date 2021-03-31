@@ -13,26 +13,28 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    <a class="nav-link" href="/dashboard">Dashboard</a>
-                    {{#if loggedIn}}
-                    <button id="logout" class="btn btn-link">Logout</button>
-                    {{else}}
-                    <a class="nav-link" href="/signin">SignIn</a>
-                    {{/if}}
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+
+        <div class="navbar">
+            <a class="nav-link active home" aria-current="page" href="/">
+                <i class="bi bi-house-fill"></i>Tech Blog</a>
+
+            {{#if loggedIn}}
+            <button id="logout" class="btn btn-link">Logout</button>
+            {{else}}
+            <a class="nav-link signin" href="/signin">SignIn</a>
+            {{/if}}
+
+
         </div>
     </nav>
-    <main>
+    <main class="container">
         {{{body}}}
     </main>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
+    <script src="/javascript/sessionout.js"></script>
     {{/if}}
 </body>
 

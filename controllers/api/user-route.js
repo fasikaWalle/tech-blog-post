@@ -6,12 +6,12 @@ router.post("/signin", (req, res) => {
   console.log(req.body);
   User.findOne({
     where: {
-      email: req.body.email,
+      username: req.body.username,
     },
   })
     .then((dbUser) => {
       if (!dbUser) {
-        res.status(404).json({ message: "there is no email by this name" });
+        res.status(404).json({ message: "there is no user by this name" });
         return;
       }
       const validPassword = dbUser.checkPassword(req.body.password);
@@ -35,7 +35,6 @@ router.post("/signin", (req, res) => {
 router.post("/signup", (req, res) => {
   User.create({
     username: req.body.username,
-    email: req.body.email,
     password: req.body.password,
   })
     .then((userData) => {
@@ -58,13 +57,11 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post('/logout',(req,res)=>{
-if(req.session.loggedIn){
-  req.session.destroy(()=>{
-    res.status(204).end()
-  })
-}
-  
-  
-})
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+});
 module.exports = router;

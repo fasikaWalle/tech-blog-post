@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Post, Comment, User } = require("../models");
-const authentication = require("../utils/authentication.js");
+const authentication = require("../__test__/utils/authentication.js");
 const sequelize=require("../config/connection")
 router.get("/", authentication, (req, res) => {
   Post.findAll({

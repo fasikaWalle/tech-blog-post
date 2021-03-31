@@ -1,23 +1,9 @@
 const router = require("express").Router();
 const { Post, User, Likes, Comment } = require("../../models");
-const authentication = require("../../utils/authentication");
+const authentication = require("../../__test__/utils/authentication");
 const sequelize = require("../../config/connection");
-
-//Find one post
-// router.put("/like", (req, res) => {
-//   if (req.session.user_id) {
-//     req.body.user_id = req.session.user_id;
-//     Post.postLike(req.body, { Likes })
-//       .then((userData) => {
-//         res.json(userData);
-//       })
-//       .catch((err) => {
-//         res.status(500).json(err);
-//       });
-//   }
-// });
+//like post
 router.put("/like", (req, res) => {
-  // custom static method created in models/Post.js
   Likes.findOne({
     where: {
       user_id: req.session.user_id,
@@ -25,7 +11,6 @@ router.put("/like", (req, res) => {
     },
   })
     .then((data) => {
-      console.log(data);
       if (data) {
         res.json({ message: "post already liked by the current user" });
         return;
@@ -72,6 +57,7 @@ router.get("/:id", (req, res) => {
     ],
   })
     .then((dbUser) => {
+      console.log(dbUser);
       if (!dbUser) {
         res.status(404).json({ message: "no post found with this id" });
         return;

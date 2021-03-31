@@ -1,22 +1,10 @@
-<article class="container mt-5 article-posts">
-    {{#each posts}}
-    <section>
-        <div>
-            {{title}}
-            <span>posted by {{user.username}} on {{createdAt}}</span>
-        </div>
-        <div>
-            <p>{{content}}</p>
-            <a href="/posts/{{id}}" class="d-flex justify-content-center">{{comments.length}} comments</a>
-            <div class="d-flex">
-                {{likes}}
-                <i class="bi bi-heart-fill mr-4 like" data-post-id={{id}}>Like</i>
-                <i class="bi bi-chat-left comment"><span class="ml-2" data-post-id={{id}}>Comment</i>
-            </div>
-        </div>
-    </section>
+<ol class='mt-4'>
+    {{#each posts as |post|}}
+    <li>
+        {{> post-info post}}
+    </li>
     {{/each}}
-</article>
+</ol>
 
 <script src="/javascript/like.js"></script>
 <script src="/javascript/comment.js"></script>

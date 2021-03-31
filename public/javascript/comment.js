@@ -1,9 +1,15 @@
 async function commentHandler(event) {
   event.preventDefault();
-
-  //   const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
-  const post_id = event.target.getAttribute("data-post-id");
-  console.log(post_id);
+  const comment_text = document
+    .querySelector('textarea[name="comment_text"]')
+    .value.trim();
+  let post_id = window.location.toString().split("/");
+  if (post_id[post_id.length - 1] === "") {
+    post_id = post_id[post_id.length - 2];
+  } else {
+    post_id = post_id[post_id.length - 1];
+  }
+  console.log(post_id, comment_text);
   if (comment_text) {
     const response = await fetch("/api/comments", {
       method: "POST",
@@ -24,6 +30,6 @@ async function commentHandler(event) {
   }
 }
 
-document.querySelectorAll(".comment").forEach((element) => {
+document.querySelectorAll(".comment-form").forEach((element) => {
   element.addEventListener("click", commentHandler);
 });
