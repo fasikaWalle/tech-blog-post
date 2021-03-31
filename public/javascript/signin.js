@@ -1,16 +1,14 @@
+
+//Signin
 async function signinHandler(event) {
   let alert = document.createElement("div");
   alert.className = "alert alert-danger";
   let form = document.querySelector(".signin-form");
   event.preventDefault();
 
-  const username = document
-    .querySelector('input[name="username"]')
-    .value.trim();
-  const password = document
-    .querySelector('input[name="password"]')
-    .value.trim();
-  console.log(username, password);
+  const username = document.querySelector('input[name="username"]').value.trim();
+  const password = document.querySelector('input[name="password"]').value.trim();
+
   if (username && password) {
     const response = await fetch("/api/users/signin", {
       method: "POST",
@@ -26,7 +24,8 @@ async function signinHandler(event) {
     if (response.ok) {
       console.log("sucess");
       document.location.replace("/dashboard/");
-    } else {
+    }
+    else {
       alert.textContent = "Please insert a valid user";
       form.appendChild(alert);
       document.location.reload();

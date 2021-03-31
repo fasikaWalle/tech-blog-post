@@ -28,8 +28,8 @@ function idleTimer() {
 
   function resetTimer() {
     clearTimeout(time);
-    time = setTimeout(logout, 28000); // time is in milliseconds (1000 is 1 second)
-    time = setTimeout(reload, 28000); // time is in milliseconds (1000 is 1 second)
+    time = setTimeout(logout, 60000); // time is in milliseconds (1000 is 1 second)
+    time = setTimeout(reload, 60000); // time is in milliseconds (1000 is 1 second)
   }
 }
 idleTimer();

@@ -1,9 +1,11 @@
+//Check the user whether the post belongs to him/her
 async function editFormHandler(event) {
   event.preventDefault();
-  // console.log(event.target.getAttribute("data-post-username"));
+
   let username = event.target.getAttribute("data-post-username");
   let id = event.target.getAttribute("data-post-id");
   let currentUser;
+
   await fetch("/api/users/", {
     method: "POST",
     body: JSON.stringify({ username }),

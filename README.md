@@ -4,7 +4,7 @@
 
 ## Description
 
-This tech-blog application is designed for connecting peoples and enable them to share their ideas
+This tech-blog application is designed for connecting peoples and enable them to share their ideas about technology news and other related topics.
 
 ## Table of Content
 
@@ -17,7 +17,7 @@ This tech-blog application is designed for connecting peoples and enable them to
 
 ## Installation
 
-`npm i`
+`npm install`
 
 ## Usage
 
@@ -28,13 +28,9 @@ fd
 
 This Licence belongs to Apache
 
-## Features
-
-ds
-
 ## Contributing
 
-clean clode
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update the code as appropriate.
 
 ## Tests
 

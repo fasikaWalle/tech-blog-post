@@ -1,15 +1,17 @@
+//Post comment
 async function commentHandler(event) {
   event.preventDefault();
-  const comment_text = document
-    .querySelector('textarea[name="comment_text"]')
-    .value.trim();
+  const comment_text = document.querySelector('textarea[name="comment_text"]').value.trim();
   let post_id = window.location.toString().split("/");
+  
+  //check if the url last is '/' or not
   if (post_id[post_id.length - 1] === "") {
     post_id = post_id[post_id.length - 2];
   } else {
     post_id = post_id[post_id.length - 1];
   }
-  console.log(post_id, comment_text);
+
+  
   if (comment_text) {
     const response = await fetch("/api/comments", {
       method: "POST",

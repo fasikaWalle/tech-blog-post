@@ -49,6 +49,11 @@
 h2{
   font-weight: 700;
   font-size: 2rem;
+  
+}
+h2 a{
+  color:#05aeff;
+  font-weight: 400;
 }
 .content{
   color:#898989;
@@ -60,7 +65,7 @@ h2{
 .writer{
     text-transform: uppercase;
     font-weight: 400;
-    color:#0000EE;
+    color:#05aeff;
     font-family: acumin-pro;
 }
 .blog-post{

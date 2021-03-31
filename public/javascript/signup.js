@@ -1,3 +1,4 @@
+//Signup
 async function signupFormHandler(event) {
   event.preventDefault();
 
@@ -21,7 +22,6 @@ async function signupFormHandler(event) {
     });
 
     if (response.ok) {
-      console.log("sucess");
       document.location.replace("/dashboard/");
     } else {
       alert.textContent = "User already exsist please change your user name";

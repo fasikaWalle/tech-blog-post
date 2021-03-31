@@ -1,3 +1,4 @@
+//Update post
 async function updateFormHandler(event) {
   event.preventDefault();
   const title = document.querySelector('input[name="title"]').value.trim();
@@ -6,7 +7,6 @@ async function updateFormHandler(event) {
 
   if (post_id[post_id.length - 1] === "") {
     post_id = post_id[post_id.length - 2];
-    console.log(post_id);
   } else {
     post_id = post_id[post_id.length - 1];
   }
@@ -20,7 +20,6 @@ async function updateFormHandler(event) {
       },
     });
     if (response.ok) {
-      console.log("sucess");
       document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
