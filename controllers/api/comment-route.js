@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Comment } = require("../../models");
 const authentication = require("../../__test__/utils/authentication");
-
+//Access al comments
 router.get("/", (req, res) => {
   Comment.findAll({})
     .then((dbComment) => {

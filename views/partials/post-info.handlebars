@@ -13,9 +13,10 @@
     <div class="mt-2">
         {{likes}}
         <i class="bi bi-hand-thumbs-up-fill mr-4 like" data-post-id={{id}}></i>
-        <i class="bi bi-chat-left mr-2 align-middle"></i>
-        <a href="/post/{{id}}" class="card-text"> {{comments.length}} {{format_plural "comment"
-            comments.length}}</a>
+
+        <a href="/post/{{id}}" class="card-text"><i class="bi bi-chat-left mr-2 align-middle"></i> {{comments.length}}
+            {{format_plural "comment"
+            comments.length}} </a>
         <i class="bi bi-pen-fill ml-4 edit-posts" data-post-username={{user.username}} data-post-id={{id}}>Edit</i>
     </div>
 </article>

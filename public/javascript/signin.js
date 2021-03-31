@@ -1,8 +1,9 @@
 
 //Signin
+let alert = document.createElement("div");
 async function signinHandler(event) {
-  let alert = document.createElement("div");
   alert.className = "alert alert-danger";
+  alert.textContent="";
   let form = document.querySelector(".signin-form");
   event.preventDefault();
 
@@ -26,9 +27,9 @@ async function signinHandler(event) {
       document.location.replace("/dashboard/");
     }
     else {
+      
       alert.textContent = "Please insert a valid user";
       form.appendChild(alert);
-      document.location.reload();
     }
   }
 }

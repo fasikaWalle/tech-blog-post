@@ -72,8 +72,12 @@ h2 a{
   margin:30px;
   padding:1rem;
   background-color: #fff;
+  transform: scale(1.03);
+  transition: transform 0.5s;
 }
-
+.blog-post:hover{
+  transform: scale(1.05);
+}
 /*-------Signin section--------*/
 .signin .signin-form, .signup-form{
 width:30%;
@@ -103,3 +107,4 @@ margin:10% auto;
   width:60%;
   margin:10% auto;
 }
+

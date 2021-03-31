@@ -3,7 +3,7 @@ const { Post, User, Likes, Comment } = require("../../models");
 const authentication = require("../../__test__/utils/authentication");
 const sequelize = require("../../config/connection");
 //like post
-router.put("/like",authentication, (req, res) => {
+router.put("/like", authentication, (req, res) => {
   Likes.findOne({
     where: {
       user_id: req.session.user_id,
@@ -32,7 +32,7 @@ router.put("/like",authentication, (req, res) => {
     });
 });
 
-router.get("/:id",authentication, (req, res) => {
+router.get("/:id", authentication, (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
@@ -84,6 +84,7 @@ router.post("/", authentication, (req, res) => {
 
 //Update post
 router.put("/:id", authentication, (req, res) => {
+  console.log(req.body);
   Post.update(
     {
       title: req.body.title,
