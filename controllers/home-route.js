@@ -33,6 +33,7 @@ router.get("/", (req, res) => {
       return;
     }
     const posts = userData.map((post) => post.get({ plain: true }));
+    console.log(posts);
     res.render("home", { posts, loggedIn: req.session.loggedIn });
   });
 });

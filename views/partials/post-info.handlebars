@@ -1,15 +1,25 @@
-<div class="card blog-post">
-    <div class="card-header d-flex justify-content-between align-items-center pl-2 pr-2">
+<article class="blog-post">
+    <h2>
         <a href="/post/{{id}}">{{title}}</a>
-        <span>posted by {{user.username}} on {{format_date created_at}}</span>
+    </h2>
+    <div class="content">
+        {{content}}
     </div>
-    <div class="card-body">
-        <p class="card-title">{{content}}</p>
+    <div>
+        <span class="writer">by {{user.username}} </span>
+        <span>&nbsp;| &nbsp;</span>
+        <span>{{format_date created_at}}</span>
+    </div>
+    <div class="mt-2">
         {{likes}}
         <i class="bi bi-hand-thumbs-up-fill mr-4 like" data-post-id={{id}}></i>
-
+        <i class="bi bi-chat-left mr-2 align-middle"></i>
         <a href="/post/{{id}}" class="card-text"> {{comments.length}} {{format_plural "comment"
             comments.length}}</a>
-
+        {{!-- <a href="/dashboard/edit/{{id}}" class="edit-post ml-2">Edit</a> --}}
+        {{!-- <button class="edit-posts">edit</button> --}}
+        <i class="bi bi-pen-fill ml-4 edit-posts" data-post-username={{user.username}} data-post-id={{id}}>Edit</i>
     </div>
-</div>
+</article>
+
+<script src="/javascript/updatePost.js"></script>

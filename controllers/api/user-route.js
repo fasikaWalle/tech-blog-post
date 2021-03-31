@@ -51,6 +51,22 @@ router.post("/signup", (req, res) => {
       res.status(500).json(err);
     });
 });
+router.post("/", (req, res) => {
+  User.findOne({
+    where: {
+      id: req.session.user_id,
+    },
+    attributes: ["username"],
+  })
+    .then((userData) => {
+      console.log(userData);
+      const post = userData.get({ plain: true });
+      res.json(post);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
 router.get("/", (req, res) => {
   User.findAll({}).then((userData) => {
     res.json(userData);

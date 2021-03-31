@@ -9,24 +9,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.4.0/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-
-
-        <div class="navbar">
+    <nav>
+        <div class="nav-bar">
             <a class="nav-link active home" aria-current="page" href="/">
                 <i class="bi bi-house-fill"></i>Tech Blog</a>
-
             {{#if loggedIn}}
-            <button id="logout" class="btn btn-link">Logout</button>
+            <div>
+                <button id="logout" class="btn btn-link">Logout</button>
+                <a href="/dashboard" id="dashboard" class="btn btn-link">Dashboard</a>
+            </div>
             {{else}}
             <a class="nav-link signin" href="/signin">SignIn</a>
             {{/if}}
-
-
         </div>
     </nav>
     <main class="container">
@@ -34,7 +34,8 @@
     </main>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
-    <script src="/javascript/sessionout.js"></script>
+    {{!--
+    <script src="/javascript/sessionout.js"></script> --}}
     {{/if}}
 </body>
 

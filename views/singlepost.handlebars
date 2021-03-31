@@ -1,15 +1,15 @@
-<article class="container mt-4">
+<article class="mt-4 comment">
     {{> post-info posts}}
     {{>comment posts.comments}}
     {{#if loggedIn}}
     <section class="">
         <form class="comment-form">
             <div class="form-outline mb-4">
-                <label class="form-label" for="form4Example3">Comments</label>
+                <label class="form-label ml-4" for="comment">Comments</label>
                 <textarea class="form-control" id="comment" name="comment_text" rows="4"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block mb-4" data-post-id={{id}}>Submit</button>
+            <button type="submit" class="btn btn-primary btn-block mb-4 btn-comment" data-post-id={{id}}>Submit</button>
         </form>
     </section>
     {{/if}}

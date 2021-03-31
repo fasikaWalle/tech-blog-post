@@ -1,3 +1,5 @@
+
+/*-------Main section--------*/
 * {
     box-sizing: border-box;
     padding: 0;
@@ -5,51 +7,88 @@
   }
    
   body, html {
-    font-size: 20px;
-    font-family:  Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif;
     color:#333;
+    background-color: #f4f4f4;
   }
-  
+ 
   a {
     text-decoration: none;
     font-size: 90%;
-    color: #4facfe;
-    margin:1.5rem 0.2rem;
+    color:#151515;
     font-weight: bold;
     transition: color .3s ease-in-out;
   }
-  .navbar{
-    padding: 0.1rem 0;  
+ /*---------Navbar--------*/
+  .nav-bar{
+    padding: 0.7rem 5rem;  
     font-size: 120%;
    background-color: #0c2438;
    color:#fff;
    display: flex;
-  
-   
+   justify-content: space-between;
   }
-  .navbar .home{
+  .nav-bar .home{
     font-size: 2rem;
+    font-weight: 300;
   }
 
-.blog-post span{
-    color:rgb(122, 121, 121);
-    font-size: 70%;
-}
-.navbar .nav-link{
+.nav-bar .nav-link{
   color:#fff;
 }
-  .card-header{
-      padding:0;
+ 
+  .nav-bar .signin,#logout, #dashboard{
+   font-size: 1.4rem;
+    font-weight: 300;
+    text-decoration: none;
+    color:#fff;
+    margin-top: 0.5rem;
   }
-  .navbar .signin{
-    justify-self: end;
-  }
-.container ol{
-    list-style: none;
+
+/*-------blog-post article--------*/
+h2{
+  font-weight: 700;
+}
+.content{
+  color:#898989;
+  font-weight: 400;
+  line-height: 1.3em;
+  margin: 5px 0;
 }
   
+.writer{
+    text-transform: uppercase;
+    font-weight: 400;
+    color:#0000EE;
+    font-family: acumin-pro;
+}
+.blog-post{
+  margin:30px;
+  padding:1rem;
+  background-color: #fff;
+}
+
+/*-------Signin section--------*/
+.signin .signin-form, .signup-form,.create-post{
+width:30%;
+margin:10% auto;
+}
+.signin .signin-form p a{
+  color:#1266f1;
+  font-size: 1rem;
+}
+.card{
+  border:none;
+}
 .card-body{
-  padding:0.2rem 1.2rem;
+  padding:0.2rem;
 }
-  
-  
+/*-------comment article--------*/
+#comment,.btn-comment{
+ width:95%;
+ margin:0 auto;
+}
+/*-------section my post--------*/
+.my-post{
+  margin-top:5%;
+}
