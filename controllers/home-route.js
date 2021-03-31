@@ -86,7 +86,7 @@ router.get("/post/:id", authentication, (req, res) => {
       if (req.session) {
         res.render("singlepost", { posts, loggedIn: req.session.loggedIn });
       } else {
-        console.log("hey");
+        res.json({message:"Please login first"})
       }
     })
     .catch((err) => {
