@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Post, Comment, User } = require("../models");
 const authentication = require("../__test__/utils/authentication.js");
-const sequelize=require("../config/connection")
+const sequelize = require("../config/connection");
 router.get("/", authentication, (req, res) => {
   Post.findAll({
     where: {
@@ -12,7 +12,12 @@ router.get("/", authentication, (req, res) => {
       "title",
       "content",
       "created_at",
-      [sequelize.literal(`(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)`),'likes']
+      [
+        sequelize.literal(
+          `(SELECT COUNT(*) FROM likes WHERE post.id = likes.post_id)`
+        ),
+        "likes",
+      ],
     ],
     include: [
       {
@@ -34,23 +39,16 @@ router.get("/", authentication, (req, res) => {
     .then((dbUserData) => {
       const posts = dbUserData.map((post) => post.get({ plain: true }));
       console.log(posts);
-      res.render("dashboard", {posts, loggedIn: true });
+      res.render("dashboard", { posts, loggedIn: true });
     })
     .catch((err) => {
       res.status(500).json(err);
     });
 });
 
-
 router.get("/edit/:id", authentication, (req, res) => {
-  console.log(req.params.id)
   Post.findByPk(req.params.id, {
-    attributes: [
-      "id",
-      "title",
-      "content",
-      "created_at",
-    ],
+    attributes: ["id", "title", "content", "created_at"],
     include: [
       {
         model: Comment,
@@ -69,7 +67,6 @@ router.get("/edit/:id", authentication, (req, res) => {
     .then((dbPost) => {
       if (dbPost) {
         const posts = dbPost.get({ plain: true });
-
         res.render("edit-post", {
           posts,
           loggedIn: true,

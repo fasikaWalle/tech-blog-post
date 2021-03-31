@@ -6,8 +6,10 @@ module.exports = {
   },
 
   format_plural: (word, amount) => {
-    if (amount !== 1) {
-      return ` ${word}s`;
+    console.log(word, amount);
+    if (amount > 1) {
+      console.log("true");
+      return `${word}s`;
     }
     return word;
   },

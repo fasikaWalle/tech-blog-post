@@ -48,6 +48,7 @@
 /*-------blog-post article--------*/
 h2{
   font-weight: 700;
+  font-size: 2rem;
 }
 .content{
   color:#898989;
@@ -69,7 +70,7 @@ h2{
 }
 
 /*-------Signin section--------*/
-.signin .signin-form, .signup-form,.create-post{
+.signin .signin-form, .signup-form{
 width:30%;
 margin:10% auto;
 }
@@ -88,7 +89,12 @@ margin:10% auto;
  width:95%;
  margin:0 auto;
 }
+
 /*-------section my post--------*/
 .my-post{
   margin-top:5%;
+}
+.create-post,.edit-post{
+  width:60%;
+  margin:10% auto;
 }

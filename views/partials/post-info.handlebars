@@ -16,10 +16,9 @@
         <i class="bi bi-chat-left mr-2 align-middle"></i>
         <a href="/post/{{id}}" class="card-text"> {{comments.length}} {{format_plural "comment"
             comments.length}}</a>
-        {{!-- <a href="/dashboard/edit/{{id}}" class="edit-post ml-2">Edit</a> --}}
-        {{!-- <button class="edit-posts">edit</button> --}}
         <i class="bi bi-pen-fill ml-4 edit-posts" data-post-username={{user.username}} data-post-id={{id}}>Edit</i>
     </div>
 </article>
 
 <script src="/javascript/updatePost.js"></script>
+<script src="/javascript/like.js"></script>

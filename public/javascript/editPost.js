@@ -1,7 +1,7 @@
 async function updateFormHandler(event) {
   event.preventDefault();
-  const title = document.querySelector('input[name="title"]').value;
-  const content = document.querySelector('input[name="content"]').value;
+  const title = document.querySelector('input[name="title"]').value.trim();
+  const content = document.querySelector('input[name="content"]').value.trim();
   let post_id = window.location.toString().split("/");
 
   if (post_id[post_id.length - 1] === "") {

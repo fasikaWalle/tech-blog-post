@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-
+const authentication = require("../../__test__/utils/authentication");
 //signin
 router.post("/signin", (req, res) => {
   console.log(req.body);
@@ -51,7 +51,7 @@ router.post("/signup", (req, res) => {
       res.status(500).json(err);
     });
 });
-router.post("/", (req, res) => {
+router.post("/", authentication, (req, res) => {
   User.findOne({
     where: {
       id: req.session.user_id,
@@ -67,7 +67,7 @@ router.post("/", (req, res) => {
       res.json(err);
     });
 });
-router.get("/", (req, res) => {
+router.get("/", authentication, (req, res) => {
   User.findAll({}).then((userData) => {
     res.json(userData);
   });

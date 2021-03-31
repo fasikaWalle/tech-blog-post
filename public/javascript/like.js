@@ -14,7 +14,7 @@ async function likeEventHandler(event) {
   if (response.ok) {
     document.location.reload();
   } else {
-    document.location.reload();
+    document.location.replace("/signin");
   }
 }
 
