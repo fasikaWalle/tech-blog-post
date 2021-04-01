@@ -13,9 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/fasikaWalle/Tech-Blog.git"
   },
-  "production": {
-    "use_env_variable": "DATABASE_URL"
-  },
   "author": "",
   "license": "ISC",
   "bugs": {
