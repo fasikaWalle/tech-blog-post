@@ -20,6 +20,9 @@ This tech-blog application is designed for connecting peoples and enable them to
 `npm install`
 
 ## Usage
+- Go to https://tech-blog-post.herokuapp.com/ and open the application 
+- Click Signin to create an account, insert your name and your password
+- You can like ,comment and post your blog post.
 
 
 ![project image](./public/images/tech-blog.png)

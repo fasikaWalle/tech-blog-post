@@ -18,6 +18,10 @@
     color:#151515;
     font-weight: bold;
     transition: color .3s ease-in-out;
+      
+  }
+  a:hover{
+    text-decoration: none;
   }
  /*---------Navbar--------*/
   .nav-bar{
